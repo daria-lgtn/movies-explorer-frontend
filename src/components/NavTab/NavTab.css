@@ -1,0 +1,31 @@
+.navtab {
+    background-color: #F5F5F5;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+@media screen and (max-width: 1280px) {
+    .navtab {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navtab {
+        gap: 24px;
+    }
+}
+
+.navtab__link {
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 123.077% */
+    text-decoration-line: underline;
+}

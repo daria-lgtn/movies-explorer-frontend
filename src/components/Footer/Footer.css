@@ -1,0 +1,152 @@
+.footer {
+    background: #FAFAFA;
+    padding: 0px 70px 20px;
+}
+@media screen and (max-width: 1280px) {
+    .footer {
+        padding: 0px 30px 20px;
+        background: #FFF;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 0px 10px 20px;
+        background: #FFF;
+    }
+}
+
+
+.footer__divider {
+    background: #E8E8E8;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+}
+@media screen and (max-width: 1280px) {
+    .footer__divider {
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__divider {
+        margin: 21px 0 30px;
+    }
+}
+
+
+.footer__title {
+    color: #A0A0A0;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    padding-top: 79px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 1280px) {
+    .footer__title {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__title {
+        font-size: 12px;
+    }
+}
+
+
+.footer__body {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: "year name link";
+    gap: 20px;
+}
+@media screen and (max-width: 1280px) {
+    .footer__body {
+        flex-direction: row;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__body {
+        justify-items: center;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "name" 
+            "link"
+            "year";
+        gap: 12px;
+    }
+}
+
+
+.footer__body-year {
+    grid-area: year;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@media screen and (max-width: 1280px) {
+    .footer__body-year {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__body-year {
+        padding-top: 18px;
+        font-size: 12px;
+        color: #A0A0A0;
+    }
+}
+
+.footer__body-name {
+    grid-area: name;
+    color: #000;
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@media screen and (max-width: 1280px) {
+    .footer__body-name {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__body-name {
+        font-size: 12px;
+    }
+}
+
+.footer__body-link {
+    text-decoration: none;
+    grid-area: link;
+    color: #000;
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@media screen and (max-width: 1280px) {
+    .footer__body-link {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer__body-link {
+        font-size: 12px;
+    }
+}

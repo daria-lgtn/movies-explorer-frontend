@@ -1,0 +1,50 @@
+.search-form {
+    position: relative;
+}
+
+.search-form__input {
+    height: 46px;
+    width: 100%;
+    border-radius: 40px;
+    padding: 0px 22px;
+    background: #F9F9F9;
+    border: none;
+    box-sizing: border-box; 
+
+    color: #A0A0A0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+}
+@media screen and (max-width: 1280px) {
+    .movies {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movies {
+        font-size: 11px;
+    }
+}
+
+
+
+.search-form__btn {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    top: 6px;
+
+    background-image: url("../../images/icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 6px 29px;
+    border-radius: 48px;
+    background-color: #FF6838;
+    border: none;
+    cursor: pointer;
+}

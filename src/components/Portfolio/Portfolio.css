@@ -1,0 +1,81 @@
+.portfolio {
+    padding: 0px 70px 125px;
+}
+
+@media screen and (max-width: 1280px) {
+    .portfolio {
+        padding: 0px 50px 90px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio {
+        padding: 0px 14px 70px;
+    }
+}
+
+.portfolio__title {
+    color: #A0A0A0;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+    .portfolio__title {
+        font-size: 18px;
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio__title {
+        font-size: 14px;
+        padding-bottom: 40px;
+    }
+}
+
+.portfolio__info {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    /* 166.667% */
+    letter-spacing: -1.2px;
+    position: relative;
+}
+
+@media screen and (max-width: 1280px) {
+    .portfolio__info {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio__info {
+        font-size: 18px;
+    }
+}
+
+.portfolio__divider {
+    background: #E6E6E6;
+    margin: 20px 0px;
+    width: 100%;
+    height: 1px;
+}
+
+.portfolio__info::after {
+    content: "↗";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
