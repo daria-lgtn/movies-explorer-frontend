@@ -15,30 +15,35 @@
     }
 }
 
+.footer__content {
+    max-width: var(--width);
+    margin: auto;
+}
 
-.footer__divider {
+
+.footer__content-divider {
     background: #E8E8E8;
     height: 1px;
     width: 100%;
     margin: 20px 0;
 }
 @media screen and (max-width: 1280px) {
-    .footer__divider {
+    .footer__content-divider {
         margin: 20px 0;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__divider {
+    .footer__content-divider {
         margin: 21px 0 30px;
     }
 }
 
 
-.footer__title {
+.footer__content-title {
     color: #A0A0A0;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
+    font-family: var(--font);
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -48,30 +53,30 @@
     margin: 0 auto;
 }
 @media screen and (max-width: 1280px) {
-    .footer__title {
+    .footer__content-title {
         font-size: 13px;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__title {
+    .footer__content-title {
         font-size: 12px;
     }
 }
 
 
-.footer__body {
+.footer__content-body {
     display: grid;
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "year name link";
     gap: 20px;
 }
 @media screen and (max-width: 1280px) {
-    .footer__body {
+    .footer__content-body {
         flex-direction: row;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__body {
+    .footer__content-body {
         justify-items: center;
         grid-template-rows: auto auto auto;
         grid-template-areas: 
@@ -83,70 +88,75 @@
 }
 
 
-.footer__body-year {
+.footer__content-body-year {
     grid-area: year;
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
+    font-family: var(--font);
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 @media screen and (max-width: 1280px) {
-    .footer__body-year {
+    .footer__content-body-year {
         font-size: 13px;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__body-year {
+    .footer__content-body-year {
         padding-top: 18px;
         font-size: 12px;
         color: #A0A0A0;
     }
 }
 
-.footer__body-name {
+.footer__content-body-name {
     grid-area: name;
     color: #000;
     text-align: right;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
+    font-family: var(--font);
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 @media screen and (max-width: 1280px) {
-    .footer__body-name {
+    .footer__content-body-name {
         font-size: 13px;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__body-name {
+    .footer__content-body-name {
         font-size: 12px;
     }
 }
 
-.footer__body-link {
+.footer__content-body-link {
     text-decoration: none;
     grid-area: link;
     color: #000;
     text-align: right;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
+    font-family: var(--font);
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    transition: opacity 0.3s;
 }
+.footer__content-body-link:hover{
+    opacity: 0.7;
+}
+
 @media screen and (max-width: 1280px) {
-    .footer__body-link {
+    .footer__content-body-link {
         font-size: 13px;
     }
 }
 @media screen and (max-width: 768px) {
-    .footer__body-link {
+    .footer__content-body-link {
         font-size: 12px;
     }
 }

@@ -11,18 +11,18 @@ export function SavedMovies() {
     return (
         <>
             <Header authorized/>
-            <div className="saved-movies">
-                <div className="saved-movies__search-form">
+            <main className="saved-movies">
+                <section className="saved-movies__search-form">
                     <SearchForm />
-                </div>
-                <div className="saved-movies__checkbox">
+                </section>
+                <section className="saved-movies__checkbox">
                     <FilterCheckbox />
-                </div>
+                </section>
 
                 <hr className="saved-movies__divider" />
 
                 <MoviesCardList />
-            </div>
+            </main>
             <Footer />
         </>
     );

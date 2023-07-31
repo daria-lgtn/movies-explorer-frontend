@@ -11,18 +11,18 @@ export function Movies() {
     return (
         <>
             <Header authorized/>
-            <section className="movies">
-                <div className="movies__search-form">
+            <main className="movies">
+                <section className="movies__search-form">
                     <SearchForm />
-                </div>
-                <div className="movies__checkbox">
+                </section>
+                <section className="movies__checkbox">
                     <FilterCheckbox />
-                </div>
+                </section>
 
                 <hr className="movies__divider" />
 
                 <MoviesCardList movies={Array(10)}/>
-            </section>
+            </main>
             <Footer />
         </>
     );

@@ -13,24 +13,20 @@ export function Main() {
     return (
         <>
             <Header />
-            <Promo />
-            <NavTab
-                options={[
-                    { title: "О проекте", to: "about" },
-                    { title: "Технологии", to: "techs" },
-                    { title: "Студент", to: "student" },
-                ]}
-            />
-            <div id="about">
+            <main>
+                <Promo />
+                <NavTab
+                    options={[
+                        { title: "О проекте", to: "about" },
+                        { title: "Технологии", to: "techs" },
+                        { title: "Студент", to: "student" },
+                    ]}
+                />
                 <AboutProject />
-            </div>
-            <div id="techs">
                 <Techs />
-            </div>
-            <div id="student">
                 <AboutMe />
-            </div>
-            <Portfolio />
+                <Portfolio />
+            </main>
             <Footer />
         </>
     );

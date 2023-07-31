@@ -4,9 +4,12 @@ import "./SearchForm.css";
 export function SearchForm() {
 
     return (
-        <div className="search-form">
-            <input className="search-form__input" placeholder="Фильм"/>
+        <form className="search-form">
+            <input
+                required
+                minLength={3}
+                className="search-form__input" placeholder="Фильм" />
             <button className="search-form__btn"></button>
-        </div>
+        </form>
     );
 }

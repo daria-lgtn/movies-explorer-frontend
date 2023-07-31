@@ -5,12 +5,14 @@ export function Footer() {
 
     return (
         <footer className="footer">
-            <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
-            <hr className="footer__divider"/>
-            <div className="footer__body"> 
-                <p className="footer__body-year">{`© ${new Date().getFullYear()}`}</p>
-                <p className="footer__body-name">Яндекс.Практикум</p>
-                <a href="https://github.com/daria-lgtn/movies-explorer-frontend" className="footer__body-link">Github</a>
+            <div className="footer__content">
+                <p className="footer__content-title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
+                <hr className="footer__content-divider" />
+                <div className="footer__content-body">
+                    <p className="footer__content-body-year">{`© ${new Date().getFullYear()}`}</p>
+                    <p className="footer__content-body-name">Яндекс.Практикум</p>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/daria-lgtn/movies-explorer-frontend" className="footer__content-body-link">Github</a>
+                </div>
             </div>
         </footer>
     );

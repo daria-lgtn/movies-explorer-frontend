@@ -22,7 +22,7 @@ export function Navigation(props) {
     }
 
     return (
-        <>
+        <div className="navigation">
             {options.map((option, index) => (
                 <NavLink to={option.to}
                     key={index}
@@ -30,6 +30,6 @@ export function Navigation(props) {
                     {option.title}
                 </NavLink>
             ))}
-        </>
+        </div>
     );
 }

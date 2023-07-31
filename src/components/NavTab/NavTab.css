@@ -21,11 +21,16 @@
 
 .navtab__link {
     color: #000;
-    font-family: Inter;
+    font-family: var(--font);
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
     /* 123.077% */
     text-decoration-line: underline;
+    transition: opacity 0.3s;
+}
+
+.navtab__link:hover {
+    opacity: 0.7;
 }

@@ -14,9 +14,9 @@ export function MoviesCard() {
                     <p className="movies-card__description-row-title">
                         33 слова о дизайне
                     </p>
-                    <div className="movies-card__description-row-indicator">
+                    <button className="movies-card__description-row-indicator">
                         <img src={circleFilled} alt="circle"></img>
-                    </div>
+                    </button>
                 </div>
                 <p className="movies-card__description-duration">
                     1ч42м

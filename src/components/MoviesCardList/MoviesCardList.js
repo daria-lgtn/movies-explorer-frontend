@@ -13,7 +13,7 @@ export function MoviesCardList(props) {
     }
 
     return (
-        <div className="movies-card-list">
+        <section className="movies-card-list">
             <MoviesCard />
             <MoviesCard />
             <MoviesCard />
@@ -30,6 +30,6 @@ export function MoviesCardList(props) {
             <MoviesCard />
             <MoviesCard />
             <MoviesCard />
-        </div>
+        </section>
     );
 }

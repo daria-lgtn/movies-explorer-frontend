@@ -5,11 +5,11 @@ import "./Register.css";
 export function Register() {
 
     return (
-        <div className="register">
+        <main className="register">
             <Link to="/" className="register__link"></Link>
             <h1 className="register__title">Добро пожаловать!</h1>
             <form className="register__form">
-                <div className="register__form_fields">
+                <div className="register__form-fields">
                     <div className="register__form-field">
                         <label className="register__form-field-label">Имя</label>
                         <input className="register__form-field-input"
@@ -33,6 +33,6 @@ export function Register() {
                 Уже зарегистрированы?
                 <Link className="register__form-signup-link" to="/signin">Войти</Link>
             </p>
-        </div>
+        </main>
     );
 }
