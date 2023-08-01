@@ -41,6 +41,7 @@
 .movies-card__description-row-indicator {
     width: 16px;
     height: 16px;
+    display: contents;
 }
 
 .movies-card__description-row-title {
