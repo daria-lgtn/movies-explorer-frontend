@@ -1,38 +1,77 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useForm } from "../../hooks/useForm";
+import { Input } from "../Input/Input";
 import "./Register.css";
 
 export function Register() {
+  const { values, errors, isValid, handleChange } = useForm();
 
-    return (
-        <main className="register">
-            <Link to="/" className="register__link"></Link>
-            <h1 className="register__title">Добро пожаловать!</h1>
-            <form className="register__form">
-                <div className="register__form-fields">
-                    <div className="register__form-field">
-                        <label className="register__form-field-label">Имя</label>
-                        <input className="register__form-field-input"
-                            type="text" name="name" />
-                    </div>
-                    <div className="register__form-field">
-                        <label className="register__form-field-label">E-mail</label>
-                        <input className="register__form-field-input"
-                            type="email" name="email" />
-                    </div>
-                    <div>
-                        <label className="register__form-field-label">Пароль</label>
-                        <input className="register__form-field-input"
-                            type="password" name="password" />
-                    </div>
-                </div>
+  const [error, setError] = React.useState("");
+  const { handleRegister } = React.useContext(CurrentUserContext);
 
-                <button className="register__form-submit" type="submit">Зарегистрироваться</button>
-            </form>
-            <p className="register__form-signup">
-                Уже зарегистрированы?
-                <Link className="register__form-signup-link" to="/signin">Войти</Link>
-            </p>
-        </main>
-    );
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(e.target).entries());
+
+    setError("");
+    handleRegister(data).catch((message) => setError(message));
+  }
+
+  return (
+    <main className="register">
+      <Link to="/" className="register__link"></Link>
+      <h1 className="register__title">Добро пожаловать!</h1>
+      <form className="register__form" onSubmit={handleSubmit} noValidate>
+        <div className="register__form-fields">
+          <Input
+            name="name"
+            type="text"
+            label="Имя"
+            value={values.name}
+            onChange={handleChange}
+            error={errors.name}
+            pattern="[A-Za-zа-яА-Я]+"
+            required
+          />
+          <Input
+            name="email"
+            type="email"
+            label="E-mail"
+            value={values.email}
+            onChange={handleChange}
+            error={errors.email}
+            required
+          />
+          <Input
+            name="password"
+            type="password"
+            label="Пароль"
+            value={values.password}
+            onChange={handleChange}
+            error={errors.password}
+            minLength={8}
+            required
+          />
+        </div>
+
+        <p className="register__form-error">{error}</p>
+        <button
+          disabled={!isValid}
+          className="register__form-submit"
+          type="submit"
+        >
+          Зарегистрироваться
+        </button>
+      </form>
+      <p className="register__form-signup">
+        Уже зарегистрированы?
+        <Link className="register__form-signup-link" to="/signin">
+          Войти
+        </Link>
+      </p>
+    </main>
+  );
 }

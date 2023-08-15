@@ -1,63 +1,68 @@
 .movies-card {
-    background-color: #FDFDFD;
-    border-radius: 6px;
-    overflow: hidden;
-    width: 100%;
-    filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.05));
+  background-color: #fdfdfd;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.05));
 }
 
 .movies-card__image {
-    width: 100%;
-    height: 168px;
-    object-fit: cover;
-    object-position: top;
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media screen and (max-width: 1280px) {
-    .movies-card__image {
-        height: 190px;
-    }
+  .movies-card__image {
+    height: 190px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .movies-card__image {
-        height: 151px;
-    }
+  .movies-card__image {
+    height: 151px;
+  }
 }
 
 .movies-card__description {
-    padding: 14px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .movies-card__description-row {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 .movies-card__description-row-indicator {
-    width: 16px;
-    height: 16px;
-    display: contents;
+  width: 16px;
+  height: 16px;
+  background: unset;
+  border: none;
+  cursor: pointer;
+  padding: unset;
 }
 
 .movies-card__description-row-title {
-    color: #000;
-    font-family: var(--font);
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  color: #000;
+  font-family: var(--font);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .movies-card__description-duration {
-    color: #A0A0A0;
-    font-family: var(--font);
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #a0a0a0;
+  font-family: var(--font);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

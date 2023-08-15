@@ -9,25 +9,24 @@ import { Techs } from "../Techs/Techs";
 import { NavTab } from "../NavTab/NavTab";
 
 export function Main() {
-
-    return (
-        <>
-            <Header />
-            <main>
-                <Promo />
-                <NavTab
-                    options={[
-                        { title: "О проекте", to: "about" },
-                        { title: "Технологии", to: "techs" },
-                        { title: "Студент", to: "student" },
-                    ]}
-                />
-                <AboutProject />
-                <Techs />
-                <AboutMe />
-                <Portfolio />
-            </main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <main>
+        <Promo />
+        <NavTab
+          options={[
+            { title: "О проекте", to: "about" },
+            { title: "Технологии", to: "techs" },
+            { title: "Студент", to: "student" },
+          ]}
+        />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
+      <Footer />
+    </>
+  );
 }

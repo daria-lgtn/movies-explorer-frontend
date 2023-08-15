@@ -1,64 +1,64 @@
 .filter-checkbox {
-    position: relative;
-    height: 20px;
-    display: block;
-    cursor: pointer;
+  position: relative;
+  height: 20px;
+  display: block;
+  cursor: pointer;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .filter-checkbox__input {
-    visibility: hidden;
-    pointer-events: none;
-    width: 0;
+  visibility: hidden;
+  pointer-events: none;
+  width: 0;
 }
 
 .filter-checkbox__background {
-    width: 36px;
-    height: 20px;
-    background: #2BE080;
-    transition: background 0.3s;
-    inset: 0;
-    border-radius: 20px;
-    overflow: hidden;
+  width: 36px;
+  height: 20px;
+  background-color: #ebebeb;
+  transition: background 0.3s;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.filter-checkbox__input:checked~.filter-checkbox__background {
-    background-color: #EBEBEB;
+.filter-checkbox__input:checked ~ .filter-checkbox__background {
+  background-color: #2be080;
 }
 
 .filter-checkbox__toggle {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    top: 2px;
-    transition: left 0.3s;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  top: 2px;
+  transition: left 0.3s;
 }
 
-.filter-checkbox__input:checked~.filter-checkbox__toggle {
-    left: 18px;
+.filter-checkbox__input:checked ~ .filter-checkbox__toggle {
+  left: 18px;
 }
 
 .filter-checkbox__label {
-    color: #000;
-    font-family: var(--font);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    margin-left: 12px;
+  color: #000;
+  font-family: var(--font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-left: 12px;
 }
 @media screen and (max-width: 1280px) {
-    .filter-checkbox__label {
-        font-size: 14px;
-    }
+  .filter-checkbox__label {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 768px) {
-    .filter-checkbox__label {
-        font-size: 11px;
-    }
+  .filter-checkbox__label {
+    font-size: 11px;
+  }
 }

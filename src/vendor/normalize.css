@@ -352,6 +352,7 @@ template {
   display: none;
 }
 
-h2, p {
+h2,
+p {
   margin: 0;
 }
