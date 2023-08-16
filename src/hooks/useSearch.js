@@ -1,19 +1,27 @@
 import React from "react";
+import {
+  FORM_SEARCH,
+  FORM_SHORT,
+  SHORT_FILM_DURATION,
+} from "../utils/constants";
 
-export function useSearch(movies) {
+export function useSearch(suffix, movies) {
+  const lsSearch = FORM_SEARCH + "-" + suffix;
+  const lsShort = FORM_SHORT + "-" + suffix;
+
   const [search, setSearch] = React.useState(
-    localStorage.getItem("search") ?? "",
+    localStorage.getItem(lsSearch) ?? "",
   );
   const handleSearch = function (value) {
-    localStorage.setItem("search", value);
+    localStorage.setItem(lsSearch, value);
     setSearch(value);
   };
 
   const [short, setShort] = React.useState(
-    JSON.parse(localStorage.getItem("short") ?? "false"),
+    JSON.parse(localStorage.getItem(lsShort) ?? "false"),
   );
   const handleShort = function (value) {
-    localStorage.setItem("short", JSON.stringify(value));
+    localStorage.setItem(lsShort, JSON.stringify(value));
     setShort(value);
   };
 
@@ -29,7 +37,7 @@ export function useSearch(movies) {
   };
   const filterByShort = function (e) {
     if (short) {
-      return e.duration < 40;
+      return e.duration < SHORT_FILM_DURATION;
     }
 
     return true;

@@ -1,6 +1,5 @@
 import React from "react";
 import { MoviesCard } from "../MoviesCard/MoviesCard";
-import { Preloader } from "../Preloader/Preloader";
 import "./MoviesCardList.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { getSlices } from "./getSlices";
@@ -33,6 +32,7 @@ export function MoviesCardList(props) {
             key={movie.id}
             movie={movie}
             onLikeToggle={onLikeToggle}
+            type={props.type}
           />
         ))}
       </div>

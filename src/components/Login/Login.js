@@ -1,23 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { Input } from "../Input/Input";
 import "./Login.css";
+import { EMAIL_REGEX } from "../../utils/constants";
 
-export function Login() {
+export function Login(props) {
+  const navigate = useNavigate();
   const { values, errors, isValid, handleChange } = useForm();
-
   const [error, setError] = React.useState("");
-  const { handleLogin } = React.useContext(CurrentUserContext);
+  const [loading, setLoading] = React.useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
 
     const data = Object.fromEntries(new FormData(e.target).entries());
 
     setError("");
-    handleLogin(data).catch((message) => setError(message));
+    return props
+      .handleLogin(data)
+      .then(() => navigate("/movies", { replace: true }))
+      .catch((message) => setError(message))
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -28,7 +33,8 @@ export function Login() {
         <div className="login__form-fields">
           <Input
             name="email"
-            type="email"
+            type="text"
+            pattern={EMAIL_REGEX}
             label="E-mail"
             value={values.email}
             onChange={handleChange}
@@ -49,7 +55,7 @@ export function Login() {
 
         <p className="login__form-error">{error}</p>
         <button
-          disabled={!isValid}
+          disabled={!isValid || loading}
           className="login__form-submit"
           type="submit"
         >

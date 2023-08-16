@@ -14,8 +14,10 @@ export function Movies() {
   const [error, setError] = React.useState("");
   const [movies, setMovies] = React.useState(null);
 
-  const { filtered, search, handleSearch, short, handleShort } =
-    useSearch(movies);
+  const { filtered, search, handleSearch, short, handleShort } = useSearch(
+    "movies",
+    movies,
+  );
 
   React.useEffect(() => {
     Promise.all([moviesApi.movies(), mainApi.movies()])
@@ -61,7 +63,11 @@ export function Movies() {
         <p className="movies__error">{error}</p>
         {!movies && !error && <Preloader />}
         {!error && (
-          <MoviesCardList movies={filtered} onLikeToggle={onLikeToggle} />
+          <MoviesCardList
+            movies={filtered}
+            onLikeToggle={onLikeToggle}
+            type="public"
+          />
         )}
       </main>
       <Footer />

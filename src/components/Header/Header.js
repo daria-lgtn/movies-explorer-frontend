@@ -4,14 +4,14 @@ import { Navigation } from "../Navigation/Navigation";
 import "./Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-export function Header(props) {
-  const { loggedIn } = React.useContext(CurrentUserContext);
+export function Header() {
+  const me = React.useContext(CurrentUserContext);
 
   return (
     <header className="header">
       <Link to="/" className="header__logo" />
 
-      {loggedIn && (
+      {me && (
         <div className="header__navigation-desktop">
           <Navigation
             type="bold"
@@ -23,7 +23,7 @@ export function Header(props) {
         </div>
       )}
 
-      {!loggedIn && (
+      {!me && (
         <div className="header__actions-unauthorized">
           <Link to="/signup" className="header__actions-unauthorized-signup">
             Регистрация
@@ -34,7 +34,7 @@ export function Header(props) {
         </div>
       )}
 
-      {loggedIn && (
+      {me && (
         <div className="header__actions-authorized">
           <div className="header__actions-authorized-desktop">
             <Link to="/profile" className="header__actions-authorized-profile">

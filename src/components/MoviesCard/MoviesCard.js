@@ -1,6 +1,7 @@
 import React from "react";
-import circleEmpty from "../../images/icon-circle-empty.svg";
-import circleFilled from "../../images/icon-circle-filled.svg";
+import iconCircleEmpty from "../../images/icon-circle-empty.svg";
+import iconCircleFilled from "../../images/icon-circle-filled.svg";
+import iconDelete from "../../images/icon-delete.svg";
 import { mainApi } from "../../utils/MainApi";
 import "./MoviesCard.css";
 
@@ -14,11 +15,9 @@ function format(duration) {
 export function MoviesCard(props) {
   const movie = props.movie;
   const onToggle = props.onLikeToggle;
-  console.log(movie);
 
   const onLike = function () {
-    console.log(movie);
-    mainApi
+    return mainApi
       .like({
         movieId: movie.id,
         country: movie.country,
@@ -33,11 +32,15 @@ export function MoviesCard(props) {
         thumbnail:
           "https://api.nomoreparties.co/" + movie.image.formats.thumbnail.url,
       })
-      .then(() => onToggle(movie.id));
+      .then(() => onToggle(movie.id))
+      .catch((error) => console.log(error));
   };
 
   const onLikeUndo = function () {
-    mainApi.likeUndo(movie.id).then(() => onToggle(movie.id));
+    return mainApi
+      .likeUndo(movie.id)
+      .then(() => onToggle(movie.id))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -59,7 +62,13 @@ export function MoviesCard(props) {
             className="movies-card__description-row-indicator"
           >
             <img
-              src={movie.liked ? circleFilled : circleEmpty}
+              src={
+                props.type === "private"
+                  ? iconDelete
+                  : movie.liked
+                  ? iconCircleFilled
+                  : iconCircleEmpty
+              }
               alt="circle"
             ></img>
           </button>

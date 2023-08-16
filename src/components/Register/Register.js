@@ -1,23 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { Input } from "../Input/Input";
 import "./Register.css";
+import { EMAIL_REGEX } from "../../utils/constants";
 
-export function Register() {
+export function Register(props) {
+  const navigate = useNavigate();
   const { values, errors, isValid, handleChange } = useForm();
-
   const [error, setError] = React.useState("");
-  const { handleRegister } = React.useContext(CurrentUserContext);
+  const [loading, setLoading] = React.useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
 
     const data = Object.fromEntries(new FormData(e.target).entries());
 
     setError("");
-    handleRegister(data).catch((message) => setError(message));
+    return props
+      .handleRegister(data)
+      .then(() => navigate("/movies", { replace: true }))
+      .catch((message) => setError(message))
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -38,7 +43,8 @@ export function Register() {
           />
           <Input
             name="email"
-            type="email"
+            type="text"
+            pattern={EMAIL_REGEX}
             label="E-mail"
             value={values.email}
             onChange={handleChange}
@@ -59,7 +65,7 @@ export function Register() {
 
         <p className="register__form-error">{error}</p>
         <button
-          disabled={!isValid}
+          disabled={!isValid || loading}
           className="register__form-submit"
           type="submit"
         >
