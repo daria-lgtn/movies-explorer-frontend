@@ -12,6 +12,7 @@ export function Profile(props) {
 
   const { values, errors, isValid, handleChange } = useForm(me);
   const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState("");
   const [error, setError] = React.useState("");
 
   const [edit, setEdit] = React.useState(false);
@@ -19,6 +20,8 @@ export function Profile(props) {
 
   const onEdit = function () {
     setEdit(true);
+    setSuccess("");
+    setError("");
   };
 
   const onLogout = function () {
@@ -35,7 +38,10 @@ export function Profile(props) {
     setError("");
     return props
       .handleUpdate(data)
-      .then(() => setEdit(false))
+      .then(() => {
+        setSuccess("Профиль сохранен");
+        setEdit(false);
+      })
       .catch((message) => setError(message))
       .finally(() => setLoading(false));
   };
@@ -100,6 +106,7 @@ export function Profile(props) {
 
         {!edit && (
           <div className="profile__actions">
+            <p className="profile__actions-success">{success}</p>
             <button className="profile__actions-edit" onClick={onEdit}>
               Редактировать
             </button>

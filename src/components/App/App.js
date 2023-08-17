@@ -12,6 +12,7 @@ import { RouteProtected } from "../RouteProtected/RouteProtected";
 import { Preloader } from "../Preloader/Preloader";
 import { mainApi } from "../../utils/MainApi";
 import { JWT } from "../../utils/constants";
+import { RouteMovies } from "../RouteMovies/RouteMovies";
 
 export function App() {
   const [me, setMe] = React.useState(null);
@@ -81,8 +82,6 @@ export function App() {
             </RouteProtected>
           }
         >
-          <Route path="movies" element={<Movies />} />
-          <Route path="saved-movies" element={<SavedMovies />} />
           <Route
             path="profile"
             element={
@@ -92,14 +91,23 @@ export function App() {
               />
             }
           />
-          <Route path="*" element={<NotFound />} />
+
+          <Route path="*" element={<RouteMovies />} />
         </Route>
 
-        <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
-        <Route
-          path="/signup"
-          element={<Register handleRegister={handleRegister} />}
-        />
+        {!me && (
+          <React.Fragment>
+            <Route
+              path="/signin"
+              element={<Login handleLogin={handleLogin} />}
+            />
+            <Route
+              path="/signup"
+              element={<Register handleRegister={handleRegister} />}
+            />
+          </React.Fragment>
+        )}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </CurrentUserContext.Provider>

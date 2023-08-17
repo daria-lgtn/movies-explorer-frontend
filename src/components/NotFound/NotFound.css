@@ -60,6 +60,10 @@
   line-height: normal;
   text-decoration: none;
 
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+
   position: absolute;
   transform: translateX(-50%);
   bottom: 60px;

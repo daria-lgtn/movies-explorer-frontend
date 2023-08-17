@@ -5,31 +5,26 @@ import {
   SHORT_FILM_DURATION,
 } from "../utils/constants";
 
-export function useSearch(suffix, movies) {
-  const lsSearch = FORM_SEARCH + "-" + suffix;
-  const lsShort = FORM_SHORT + "-" + suffix;
-
+export function useSearch(movies, fromLocalStorage) {
   const [search, setSearch] = React.useState(
-    localStorage.getItem(lsSearch) ?? "",
+    fromLocalStorage ? localStorage.getItem(FORM_SEARCH) ?? "" : "",
   );
   const handleSearch = function (value) {
-    localStorage.setItem(lsSearch, value);
+    fromLocalStorage && localStorage.setItem(FORM_SEARCH, value);
     setSearch(value);
   };
 
   const [short, setShort] = React.useState(
-    JSON.parse(localStorage.getItem(lsShort) ?? "false"),
+    fromLocalStorage
+      ? JSON.parse(localStorage.getItem(FORM_SHORT) ?? "false")
+      : false,
   );
   const handleShort = function (value) {
-    localStorage.setItem(lsShort, JSON.stringify(value));
+    fromLocalStorage && localStorage.setItem(FORM_SHORT, JSON.stringify(value));
     setShort(value);
   };
 
   const filterBySearch = function (e) {
-    if (search === "") {
-      return false;
-    }
-
     return (
       e.nameRU.toLowerCase().includes(search.toLowerCase()) ||
       e.nameEN.toLowerCase().includes(search.toLowerCase())
