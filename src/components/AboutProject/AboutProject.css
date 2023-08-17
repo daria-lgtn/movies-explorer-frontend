@@ -1,200 +1,200 @@
 .about-project {
-    padding: 110px 70px;
-    max-width: var(--width);
-    margin: auto;
+  padding: 110px 70px;
+  max-width: var(--width);
+  margin: auto;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project {
-        padding: 90px 50px;
-    }
+  .about-project {
+    padding: 90px 50px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project {
-        padding: 70px 18px;
-    }
+  .about-project {
+    padding: 70px 18px;
+  }
 }
 
 .about-project__title {
-    color: #000;
-    font-family: var(--font);
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.88px;
-    padding-bottom: 23px;
+  color: #000;
+  font-family: var(--font);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  padding-bottom: 23px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__title {
-        font-size: 22px;
-        padding-bottom: 23px;
-    }
+  .about-project__title {
+    font-size: 22px;
+    padding-bottom: 23px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__title {
-        font-size: 18px;
-        padding-bottom: 28px;
-    }
+  .about-project__title {
+    font-size: 18px;
+    padding-bottom: 28px;
+  }
 }
 
 .about-project__divider {
-    width: 100%;
-    height: 1px;
-    background-color: #000;
-    margin-bottom: 70px;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  margin-bottom: 70px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__divider {
-        margin-bottom: 70px;
-    }
+  .about-project__divider {
+    margin-bottom: 70px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__divider {
-        margin-bottom: 60px;
-    }
+  .about-project__divider {
+    margin-bottom: 60px;
+  }
 }
 
 .about-project__info {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    padding-bottom: 110px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding-bottom: 110px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__info {
-        gap: 30px;
-        padding-bottom: 93px;
-    }
+  .about-project__info {
+    gap: 30px;
+    padding-bottom: 93px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__info {
-        gap: 56px;
-        flex-direction: column;
-        padding-bottom: 60px;
-    }
+  .about-project__info {
+    gap: 56px;
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
 }
 
 .about-project__info-block {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__info-block {
-        gap: 22px;
-    }
+  .about-project__info-block {
+    gap: 22px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__info-block {
-        gap: 16px;
-    }
+  .about-project__info-block {
+    gap: 16px;
+  }
 }
 
 .about-project__info-block-title {
-    color: #000;
-    font-family: var(--font);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.8px;
+  color: #000;
+  font-family: var(--font);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__info-block-title {
-        font-size: 20px;
-    }
+  .about-project__info-block-title {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__info-block-title {
-        font-size: 18px;
-    }
+  .about-project__info-block-title {
+    font-size: 18px;
+  }
 }
 
 .about-project__info-block-description {
-    color: #000;
-    font-family: var(--font);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
+  color: #000;
+  font-family: var(--font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 @media screen and (max-width: 1280px) {
-    .about-project__info-block-description {
-        font-size: 12px;
-    }
+  .about-project__info-block-description {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__info-block-description {
-        font-size: 11px;
-    }
+  .about-project__info-block-description {
+    font-size: 11px;
+  }
 }
 
 .about-project__progress {
-    display: grid;
-    row-gap: 14px;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: auto auto;
+  display: grid;
+  row-gap: 14px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto;
 }
 @media screen and (max-width: 1280px) {
-    .about-project__progress {
-        row-gap: 14px;
-    }
+  .about-project__progress {
+    row-gap: 14px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__progress {
-        row-gap: 10px;
-    }
+  .about-project__progress {
+    row-gap: 10px;
+  }
 }
 
 .about-project__progress-bar {
-    height: 36px;
-    line-height: 36px;
-    align-self: center;
-    background: #F2F2F2;
-    color: #000;
-    text-align: center;
-    font-family: var(--font);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
+  height: 36px;
+  line-height: 36px;
+  align-self: center;
+  background: #f2f2f2;
+  color: #000;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
 }
 @media screen and (max-width: 1280px) {
-    .about-project__progress-bar {
-        font-size: 14px;
-    }
+  .about-project__progress-bar {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-project__progress-bar {
-        font-size: 11px;
-    }
+  .about-project__progress-bar {
+    font-size: 11px;
+  }
 }
 
 .about-project__progress-bar_active {
-    background: #2BE080;
+  background: #2be080;
 }
 
 .about-project__progress-label {
-    color: #A0A0A0;
-text-align: center;
-font-family: var(--font);
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 17px;
+  color: #a0a0a0;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
 }
